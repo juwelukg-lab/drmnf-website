@@ -8,16 +8,16 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💛</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Hind+Siliguri:wght@400;600&family=Baloo+Da+2:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Karla:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Hind+Siliguri:wght@400;600&family=Baloo+Da+2:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 
-<header class="site-header" id="top">
+<header class="site-header">
   <div class="wrap header-inner">
-    <a class="brand" href="#top">
+    <a class="brand" href="index.html">
       <span class="brand-mark" aria-hidden="true">
         <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
           <circle cx="17" cy="17" r="16" stroke="currentColor" stroke-width="1.4"/>
@@ -28,12 +28,19 @@
     </a>
 
     <nav class="main-nav" id="main-nav" aria-label="Primary">
-      <a href="#about" data-i18n="nav_about">About</a>
-      <a href="#programs" data-i18n="nav_programs">Programs</a>
-      <a href="#journey" data-i18n="nav_journey">The Journey</a>
-      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
-      <a href="#press" data-i18n="nav_press">Media</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="index.html" class="is-current" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="members.html" data-i18n="nav_members">Our Members</a>
+      <div class="nav-item-dropdown">
+        <a href="media-coverage.html" data-i18n="nav_media">Media Coverage</a>
+        <ul class="nav-dropdown">
+          <li><a href="media-coverage.html#videos" data-i18n="nav_media_videos">Videos</a></li>
+          <li><a href="media-coverage.html#news" data-i18n="nav_media_news">News</a></li>
+          <li><a href="media-coverage.html#photos" data-i18n="nav_media_photos">Photos</a></li>
+        </ul>
+      </div>
+      <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+      <a href="contact.html" data-i18n="nav_contact_us">Contact Us</a>
     </nav>
 
     <div class="header-cta">
@@ -41,7 +48,7 @@
         <button type="button" class="lang-btn" data-lang="en" id="langEn">EN</button>
         <button type="button" class="lang-btn" data-lang="bn" id="langBn">বাং</button>
       </div>
-      <a href="#donate" class="btn btn-ember" data-i18n="nav_donate">Donate</a>
+      <a href="index.html#donate" class="btn btn-ember" data-i18n="nav_donate">Donate</a>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -53,31 +60,31 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow bn">পরিত্যক্ত নবজাতক আমাদেরই সন্তান</p>
-        <h1 data-i18n="hero_h1">Abandoned at birth.<br><em>Never abandoned by us.</em></h1>
-        <p class="hero-lede" data-i18n="hero_lede">
-          Dr. Mozib Newborn Foundation finds abandoned newborns across Bangladesh,
-          rushes them into critical medical care, and gives every one of them
-          something a hospital can't: a family to grow up in.
-        </p>
-        <div class="hero-actions">
-          <a href="#donate" class="btn btn-ember btn-lg" data-i18n="hero_cta_donate">Support a rescue</a>
-          <a href="#about" class="btn btn-ghost btn-lg" data-i18n="hero_cta_about">Our story</a>
-        </div>
-        <p class="hero-note" data-i18n="hero_note">Every case begins the same way — a phone call, and someone willing to go.</p>
-      </div>
+    <div class="wrap hero-title-wrap">
+      <h1 class="hero-title">
+        <span class="line-green">Dr. Mozib Newborn</span><span class="line-blue">Foundation</span>
+      </h1>
+      <p class="hero-title-bn">ডা: মুজিব নিউবর্ন ফাউন্ডেশন</p>
+    </div>
 
-      <div class="hero-art" aria-hidden="true">
-        <svg class="pulse-art" viewBox="0 0 420 420" fill="none">
-          <circle cx="210" cy="210" r="170" class="pulse-ring pulse-ring--outer"/>
-          <circle cx="210" cy="210" r="128" class="pulse-ring pulse-ring--inner"/>
-          <path class="pulse-line" d="M20 220 L110 220 L135 150 L165 290 L190 210 L215 220 L245 220 L265 170 L285 220 L400 220"
-                fill="none" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <p class="art-caption">Photo space — replace with a real rescue / handover photograph<br><code>assets/img/hero.jpg</code></p>
+    <div class="wrap hero-photo-wrap">
+      <div class="photo-frame hero-photo">
+        <span class="photo-frame-label">Photo space — replace with a real rescue / handover photograph<br><code>assets/img/hero.jpg</code></span>
+        <span class="caption-pill">Abandoned Baby Nayla</span>
       </div>
+    </div>
+
+    <div class="wrap hero-lede-wrap">
+      <p class="hero-lede" data-i18n="hero_lede">
+        Dr. Mozib Newborn Foundation finds abandoned newborns across Bangladesh,
+        rushes them into critical medical care, and gives every one of them
+        something a hospital can't: a family to grow up in.
+      </p>
+      <div class="hero-actions">
+        <a href="#donate" class="btn btn-ember btn-lg" data-i18n="hero_cta_donate">Support a rescue</a>
+        <a href="about.html" class="btn btn-ghost btn-lg" data-i18n="hero_cta_about">Our story</a>
+      </div>
+      <p class="hero-note" data-i18n="hero_note">Every case begins the same way — a phone call, and someone willing to go.</p>
     </div>
   </section>
 
@@ -138,32 +145,8 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section section--tint" id="about">
-    <div class="wrap about-grid">
-      <div class="about-art" aria-hidden="true">
-        <div class="photo-frame">
-          <span class="photo-frame-label">Photo space<br><code>assets/img/founder.jpg</code></span>
-        </div>
-      </div>
-      <div class="about-copy">
-        <p class="eyebrow" data-i18n="about_eyebrow">Our story</p>
-        <h2 class="section-title" data-i18n="about_title">Founded on one idea: no child is disposable.</h2>
-        <p data-i18n="about_p1">Dr. Mozib Newborn Foundation was formed by physicians and volunteers in Narayanganj who kept
-          encountering the same emergency — a newborn left at a hospital gate, a bus stand, a riverbank —
-          with no one coordinating what happened next.</p>
-        <p data-i18n="about_p2">We built that coordination: a rescue line, a standing relationship with NICUs willing to treat
-          on trust, and a vetted network of families ready to foster. What started as one ward's informal
-          effort is now a standing response system other hospitals and, increasingly, government partners
-          call on directly.</p>
-        <p><em>Replace this section with your foundation's real founding story, year established, and
-          founder biography.</em></p>
-      </div>
-    </div>
-  </section>
-
   <!-- THE JOURNEY (signature element) -->
-  <section class="section journey" id="journey">
+  <section class="section section--tint journey" id="journey">
     <div class="wrap">
       <p class="eyebrow" data-i18n="journey_eyebrow">From rescue to home</p>
       <h2 class="section-title" data-i18n="journey_title">Every child follows the same line — until it leads somewhere permanent.</h2>
@@ -207,71 +190,6 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <section class="section section--tint" id="gallery">
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="gallery_eyebrow">Gallery</p>
-      <h2 class="section-title" data-i18n="gallery_title">Moments from the ward, the handovers, and the homes after.</h2>
-
-      <div class="gallery-grid">
-        <figure class="gallery-item gallery-item--wide">
-          <div class="photo-frame"><span class="photo-frame-label">assets/img/gallery-01.jpg</span></div>
-          <figcaption data-i18n="gallery_cap1">Handover ceremony with hospital &amp; government partners</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <div class="photo-frame"><span class="photo-frame-label">assets/img/gallery-02.jpg</span></div>
-          <figcaption data-i18n="gallery_cap2">NICU care, first week</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <div class="photo-frame"><span class="photo-frame-label">assets/img/gallery-03.jpg</span></div>
-          <figcaption data-i18n="gallery_cap3">Foster family, first day home</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <div class="photo-frame"><span class="photo-frame-label">assets/img/gallery-04.jpg</span></div>
-          <figcaption data-i18n="gallery_cap4">Volunteers on a rescue call</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <div class="photo-frame"><span class="photo-frame-label">assets/img/gallery-05.jpg</span></div>
-          <figcaption data-i18n="gallery_cap5">Partner hospital ward visit</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <div class="photo-frame"><span class="photo-frame-label">assets/img/gallery-06.jpg</span></div>
-          <figcaption data-i18n="gallery_cap6">One year later — a check-in visit</figcaption>
-        </figure>
-      </div>
-      <p class="stats-disclaimer">All six tiles are placeholders. Drop real photos into <code>assets/img/</code>
-        using the filenames shown, and swap each <code>.photo-frame</code> block for an <code>&lt;img&gt;</code> tag —
-        see the comment at the top of <code>assets/style.css</code>.</p>
-    </div>
-  </section>
-
-  <!-- MEDIA / PRESS -->
-  <section class="section" id="press">
-    <div class="wrap">
-      <p class="eyebrow" data-i18n="press_eyebrow">Media coverage</p>
-      <h2 class="section-title" data-i18n="press_title">In the news.</h2>
-
-      <ul class="press-list">
-        <li class="press-item">
-          <span class="press-date">Placeholder date</span>
-          <span class="press-title" data-i18n="press1_title">“Foundation reunites abandoned newborn with foster family” — Outlet name</span>
-          <a href="#" class="press-link" data-i18n="press1_link">Read →</a>
-        </li>
-        <li class="press-item">
-          <span class="press-date">Placeholder date</span>
-          <span class="press-title" data-i18n="press2_title">Television segment on the foundation's NICU partnership</span>
-          <a href="#" class="press-link" data-i18n="press2_link">Watch →</a>
-        </li>
-        <li class="press-item">
-          <span class="press-date">Placeholder date</span>
-          <span class="press-title" data-i18n="press3_title">State Minister of Health visits handover ceremony</span>
-          <a href="#" class="press-link" data-i18n="press3_link">Read →</a>
-        </li>
-      </ul>
-      <p class="stats-disclaimer">Replace with real articles, videos and dates when available.</p>
-    </div>
-  </section>
-
   <!-- DONATE -->
   <section class="donate-band" id="donate">
     <div class="wrap donate-grid">
@@ -295,45 +213,8 @@
         </div>
         <div class="donate-card">
           <h3 data-i18n="donate_card3_title">Volunteer or foster</h3>
-          <p data-i18n="donate_card3_p">Want to join a rescue team or become a foster family? <a href="#contact">Contact us</a> and we'll walk you through vetting.</p>
+          <p data-i18n="donate_card3_p">Want to join a rescue team or become a foster family? <a href="contact.html">Contact us</a> and we'll walk you through vetting.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="eyebrow" data-i18n="contact_eyebrow">Contact us</p>
-        <h2 class="section-title" data-i18n="contact_title">Reach the rescue line, or just say hello.</h2>
-
-        <dl class="contact-list">
-          <div>
-            <dt data-i18n="contact_dt_address">Address</dt>
-            <dd data-i18n="contact_dd_address">House #E-206/1, Signboard Mor, Narayanganj, Bangladesh</dd>
-          </div>
-          <div>
-            <dt data-i18n="contact_dt_phone">Phone</dt>
-            <dd><a href="tel:+8801713409258">+880 1713-40-92-58</a></dd>
-          </div>
-          <div>
-            <dt data-i18n="contact_dt_email">Email</dt>
-            <dd><a href="mailto:info@drmnf.org">info@drmnf.org</a> <em>(placeholder — confirm your real inbox)</em></dd>
-          </div>
-        </dl>
-
-        <div class="social-row" aria-label="Social media">
-          <a href="#" aria-label="Facebook" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M13.5 21v-8h2.7l.4-3.1h-3.1V8c0-.9.25-1.5 1.55-1.5H16.7V3.7C16.4 3.66 15.4 3.6 14.2 3.6c-2.5 0-4.2 1.5-4.2 4.3V9.9H7.3V13h2.7v8h3.5z"/></svg></a>
-          <a href="#" aria-label="Twitter / X" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M3 3l7.6 10.1L3.2 21h2.3l6.4-6.9L17 21h4l-8-10.7L20.4 3h-2.3l-5.9 6.4L8 3H3z"/></svg></a>
-          <a href="#" aria-label="LinkedIn" class="social-icon"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9.5 9H13v1.7h.05c.5-.9 1.7-1.9 3.5-1.9 3.7 0 4.45 2.4 4.45 5.6V21h-4v-5.7c0-1.35-.02-3.1-1.9-3.1-1.9 0-2.2 1.5-2.2 3v5.8h-4z"/></svg></a>
-        </div>
-      </div>
-
-      <div class="map-frame">
-        <iframe title="Map location" loading="lazy"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=90.48%2C23.60%2C90.52%2C23.64&layer=mapnik"
-          style="border:0;width:100%;height:100%;"></iframe>
       </div>
     </div>
   </section>
@@ -352,12 +233,12 @@
       <span data-i18n="footer_brand">Dr. Mozib Newborn Foundation</span>
     </div>
     <nav class="footer-nav" aria-label="Footer">
-      <a href="#about" data-i18n="nav_about">About</a>
-      <a href="#programs" data-i18n="nav_programs">Programs</a>
-      <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
-      <a href="#press" data-i18n="nav_press">Media</a>
-      <a href="#donate" data-i18n="nav_donate">Donate</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <a href="about.html" data-i18n="nav_about">About</a>
+      <a href="members.html" data-i18n="nav_members">Our Members</a>
+      <a href="media-coverage.html" data-i18n="nav_media">Media Coverage</a>
+      <a href="gallery.html" data-i18n="nav_gallery">Gallery</a>
+      <a href="contact.html" data-i18n="nav_contact_us">Contact Us</a>
     </nav>
     <p class="footer-copy"><span data-i18n="footer_copy">© <span id="year"></span> Dr. Mozib Newborn Foundation. All rights reserved.</span></p>
   </div>

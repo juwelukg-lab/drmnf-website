@@ -297,3 +297,49 @@ if (rail && 'IntersectionObserver' in window) {
 } else if (rail) {
   rail.classList.add('is-visible');
 }
+
+// ---------- Lightbox (click any [data-lightbox-src] photo to view it full-size) ----------
+(function () {
+  const triggers = document.querySelectorAll('[data-lightbox-src]');
+  if (!triggers.length) return;
+
+  const modal = document.createElement('div');
+  modal.className = 'lightbox-modal';
+  modal.hidden = true;
+  modal.innerHTML =
+    '<button type="button" class="lightbox-close" aria-label="Close">' +
+      '<svg viewBox="0 0 24 24" width="20" height="20" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>' +
+    '</button>' +
+    '<img class="lightbox-modal-img" src="" alt="">';
+  document.body.appendChild(modal);
+
+  const modalImg = modal.querySelector('.lightbox-modal-img');
+  const closeBtn = modal.querySelector('.lightbox-close');
+  let lastFocused = null;
+
+  function openLightbox(src, alt) {
+    lastFocused = document.activeElement;
+    modalImg.src = src;
+    modalImg.alt = alt || '';
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function closeLightbox() {
+    modal.hidden = true;
+    modalImg.src = '';
+    document.body.style.overflow = '';
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  triggers.forEach((el) => {
+    el.addEventListener('click', () => {
+      openLightbox(el.getAttribute('data-lightbox-src'), el.getAttribute('data-lightbox-alt'));
+    });
+  });
+  closeBtn.addEventListener('click', closeLightbox);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (!modal.hidden && e.key === 'Escape') closeLightbox();
+  });
+})();

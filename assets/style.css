@@ -111,6 +111,7 @@ img { max-width: 100%; display: block; }
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
+.site-header .wrap { max-width: 1340px; } /* a bit wider than the body's .wrap so the full nav has room to sit on one line */
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
   padding-block: 12px;
@@ -123,16 +124,17 @@ img { max-width: 100%; display: block; }
   font-size: 1.05rem;
 }
 .brand-logo { height: 52px; width: auto; flex-shrink: 0; }
-.brand-text { color: var(--ink); }
+.brand-text { color: var(--ink); white-space: nowrap; }
 .brand-text em { font-style: normal; color: var(--ink-2); }
 
-.main-nav { display: flex; gap: 4px; align-items: center; }
+.main-nav { display: flex; gap: 2px; align-items: center; }
 .main-nav a {
   display: inline-block;
   text-decoration: none; color: var(--ink);
-  font-weight: 600; font-size: 0.85rem;
+  font-weight: 600; font-size: 0.82rem;
   letter-spacing: 0.03em; text-transform: uppercase;
-  padding: 10px 18px; border-radius: 999px;
+  padding: 10px 14px; border-radius: 999px;
+  white-space: nowrap;
   transition: background 0.18s ease;
 }
 .main-nav a:hover { background: var(--paper-2); }
@@ -438,7 +440,11 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 900px) {
+
+/* Nav switches to the hamburger menu well before the inline nav would run
+   out of room and start wrapping mid-word — a wider breakpoint than the
+   content-grid one below, on purpose. */
+@media (max-width: 1240px) {
   .main-nav { display: none; }
   .nav-toggle { display: flex; }
   .site-header.nav-open .main-nav {
@@ -454,7 +460,9 @@ img { max-width: 100%; display: block; }
     padding: 0 0 0 16px; margin-top: -4px;
   }
   .nav-dropdown a { padding: 8px 0; }
+}
 
+@media (max-width: 900px) {
   .about-grid, .donate-grid, .contact-grid { grid-template-columns: 1fr; }
   .about-art { order: -1; max-width: 320px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 28px 16px; }

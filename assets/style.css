@@ -129,6 +129,25 @@ img { max-width: 100%; display: block; }
 .main-nav a:hover::after { right: 0; }
 
 .header-cta { display: flex; align-items: center; gap: 14px; }
+
+.lang-switch {
+  display: flex; align-items: center;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+.lang-btn {
+  border: none; background: transparent; cursor: pointer;
+  padding: 5px 12px; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-2);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+.lang-btn[data-lang="bn"] { font-family: var(--font-bn); font-size: 0.85rem; }
+.lang-btn.is-active { background: var(--ink); color: #fff; }
+.lang-btn:not(.is-active):hover { background: var(--line); }
 .nav-toggle {
   display: none; flex-direction: column; justify-content: center; gap: 5px;
   width: 38px; height: 38px; border-radius: 8px;
@@ -333,6 +352,25 @@ img { max-width: 100%; display: block; }
 .footer-nav a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.92rem; }
 .footer-nav a:hover { color: #fff; }
 .footer-copy { font-size: 0.82rem; margin: 0; width: 100%; text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.12); }
+
+/* ---------- Bengali mode ----------
+   Fraunces/IBM Plex Mono have no Bengali glyphs, so headings and the mono
+   "eyebrow"/label treatment fall back to Bengali-supporting faces when the
+   page language is switched. */
+:root[lang="bn"] body { font-family: var(--font-bn); }
+:root[lang="bn"] h1,
+:root[lang="bn"] h2,
+:root[lang="bn"] h3,
+:root[lang="bn"] .brand-text {
+  font-family: 'Baloo Da 2', var(--font-bn);
+}
+:root[lang="bn"] em { font-style: normal; }
+:root[lang="bn"] .eyebrow:not(.bn),
+:root[lang="bn"] .contact-list dt {
+  font-family: var(--font-bn);
+  text-transform: none;
+  letter-spacing: 0;
+}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {

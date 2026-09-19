@@ -296,7 +296,10 @@ img { max-width: 100%; display: block; }
   border: 1px dashed var(--line);
   display: flex; align-items: center; justify-content: center;
   text-align: center; padding: 20px;
+  overflow: hidden;
 }
+.photo-frame:has(img) { padding: 0; border-style: solid; }
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .photo-frame-label {
   font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-2);
   background: rgba(255,252,247,0.85); padding: 8px 12px; border-radius: 8px;

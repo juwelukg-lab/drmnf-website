@@ -314,7 +314,11 @@ img { max-width: 100%; display: block; }
 }
 .mvg-grid .card:hover .card-icon { transform: scale(1.1) rotate(-4deg); }
 .mvg-grid .card h3 { font-size: 1.4rem; }
-.mvg-grid .card p { font-size: 1.03rem; line-height: 1.7; }
+.mvg-grid .card p {
+  font-size: 1.03rem; line-height: 1.7;
+  text-align: justify; text-align-last: left;
+  hyphens: auto;
+}
 
 /* ---------- About ---------- */
 .about-grid {

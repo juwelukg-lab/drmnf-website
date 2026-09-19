@@ -14,23 +14,31 @@
 */
 
 :root {
-  /* Color — matched to the foundation's own site: green + blue brand, pink accent */
-  --paper:      #FFFFFF;   /* page background */
-  --paper-2:    #F6F7FB;   /* card / tinted-section surface */
-  --ink:        #123A5C;   /* deep blue — dark bands, footer, default heading color */
-  --ink-2:      #1D5FAE;   /* brand blue — links, secondary heading color */
-  --ember:      #E85D8A;   /* brand pink — primary CTA + accents */
-  --ember-dark: #C94A73;   /* pink hover / darker text-on-light use */
-  --dawn:       #1E8A4C;   /* brand green — dividers, secondary highlights */
-  --foster:     #1D5FAE;   /* blue — foster/family card accent (shares brand blue) */
-  --charcoal:   #202B36;   /* body text */
-  --line:       rgba(18,58,92,0.12);
-  --nav-active: #E7E4F7;   /* soft lavender pill behind the active nav item */
+  /* Color — sampled directly from the foundation's real logo (a teal seal with a
+     navy ribbon and a red/green/blue family-figure mark on a tan "Estd." tag). */
+  --paper:      #FFFDF9;   /* page background — barely-warm white, not clinical white */
+  --paper-2:    #F6F2EA;   /* card / tinted-section surface */
+  --ink:        #14185C;   /* the logo's navy ribbon text — dark bands, footer, headings */
+  --ink-2:      #33409E;   /* lighter navy-blue — secondary text, "International support" */
+  --teal:       #00918F;   /* the logo's dominant ring color — THE brand color: primary
+                               buttons, active nav, underlines */
+  --teal-dark:  #01706E;   /* teal hover */
+  --ember:      #E5395C;   /* red from the logo's family-figure mark — caption pill,
+                               "Medical care", the journey line */
+  --ember-dark: #C22348;   /* red hover / darker text-on-light use */
+  --dawn:       #B9803C;   /* the logo's tan "Estd." tag — warm dividers, stat numbers */
+  --foster:     #1E9C4F;   /* green from the family-figure mark — "Foster placement" */
+  --charcoal:   #2B2A28;   /* body text — warm near-black, not cool slate */
+  --line:       rgba(20,24,92,0.12);
+  --nav-active: #E3F3F2;   /* soft teal tint behind the active nav item */
 
-  /* Type */
-  --font-display: 'Baloo 2', 'Baloo Da 2', system-ui, sans-serif;
+  /* Type — a characterful serif (with real ink-trap detail, not a template default)
+     paired with a plain humanist sans; Bengali gets its own serif/sans pairing so
+     neither language reads as an afterthought. */
+  --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
   --font-body: 'Karla', 'Segoe UI', system-ui, sans-serif;
   --font-bn: 'Hind Siliguri', 'Karla', sans-serif;
+  --font-bn-display: 'Tiro Bangla', var(--font-bn);
   --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
   --radius: 14px;
@@ -74,7 +82,7 @@ img { max-width: 100%; display: block; }
 .skip-link:focus { left: 16px; top: 16px; }
 
 :focus-visible {
-  outline: 2.5px solid var(--ember);
+  outline: 2.5px solid var(--teal);
   outline-offset: 3px;
 }
 
@@ -91,10 +99,10 @@ img { max-width: 100%; display: block; }
   transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
 }
 .btn-lg { padding: 14px 28px; font-size: 1.02rem; }
-.btn-ember { background: var(--ember); color: #fff; }
-.btn-ember:hover { background: var(--ember-dark); transform: translateY(-1px); }
+.btn-primary { background: var(--teal); color: #fff; }
+.btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
 .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
-.btn-ghost:hover { border-color: var(--ink); }
+.btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
 
 /* ---------- Header ---------- */
 .site-header {
@@ -109,13 +117,13 @@ img { max-width: 100%; display: block; }
   gap: 20px;
 }
 .brand {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: center; gap: 12px;
   text-decoration: none;
   font-family: var(--font-display); font-weight: 700; line-height: 1.18;
   font-size: 1.05rem;
 }
-.brand-mark { color: var(--dawn); flex-shrink: 0; }
-.brand-text { color: var(--dawn); }
+.brand-logo { height: 52px; width: auto; flex-shrink: 0; }
+.brand-text { color: var(--ink); }
 .brand-text em { font-style: normal; color: var(--ink-2); }
 
 .main-nav { display: flex; gap: 4px; align-items: center; }
@@ -141,7 +149,7 @@ img { max-width: 100%; display: block; }
   list-style: none; margin: 0; padding: 8px; display: none;
   position: absolute; top: 100%; left: 0;
   background: #fff; border: 1px solid var(--line); border-radius: 12px;
-  box-shadow: 0 12px 28px rgba(18,58,92,0.14);
+  box-shadow: 0 12px 28px rgba(20,24,92,0.14);
   min-width: 190px;
 }
 .nav-item-dropdown:hover .nav-dropdown,
@@ -170,7 +178,7 @@ img { max-width: 100%; display: block; }
   transition: background 0.18s ease, color 0.18s ease;
 }
 .lang-btn[data-lang="bn"] { font-family: var(--font-bn); font-size: 0.85rem; }
-.lang-btn.is-active { background: var(--ink); color: #fff; }
+.lang-btn.is-active { background: var(--teal); color: #fff; }
 .lang-btn:not(.is-active):hover { background: var(--line); }
 .nav-toggle {
   display: none; flex-direction: column; justify-content: center; gap: 5px;
@@ -185,7 +193,7 @@ img { max-width: 100%; display: block; }
 .eyebrow {
   font-family: var(--font-mono); font-size: 0.78rem;
   letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--ember-dark); margin: 0 0 14px;
+  color: var(--teal-dark); margin: 0 0 14px;
 }
 .eyebrow--light { color: var(--dawn); }
 
@@ -194,10 +202,10 @@ img { max-width: 100%; display: block; }
   font-size: clamp(2.3rem, 6vw, 4.1rem);
   line-height: 1.08; margin: 0; font-weight: 700;
 }
-.hero-title .line-green { color: var(--dawn); display: block; }
-.hero-title .line-blue { color: var(--ink-2); display: block; }
+.hero-title .line-green { color: var(--teal); display: block; }
+.hero-title .line-blue { color: var(--ink); display: block; }
 .hero-title-bn {
-  font-family: var(--font-bn); font-weight: 600; color: var(--dawn);
+  font-family: var(--font-bn); font-weight: 600; color: var(--teal);
   font-size: clamp(1.15rem, 2.6vw, 1.55rem);
   margin: 16px 0 0;
 }
@@ -209,7 +217,7 @@ img { max-width: 100%; display: block; }
   background: var(--ember); color: #fff; font-weight: 700;
   font-size: 0.92rem; line-height: 1;
   padding: 13px 26px; border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(232,93,138,0.35);
+  box-shadow: 0 10px 24px rgba(229,57,92,0.35);
 }
 
 .hero-lede-wrap { max-width: 640px; margin: 0 auto; }
@@ -262,10 +270,11 @@ img { max-width: 100%; display: block; }
 .card-icon {
   display: inline-flex; align-items: center; justify-content: center;
   width: 48px; height: 48px; border-radius: 50%;
-  background: rgba(225,97,60,0.1); color: var(--ember);
+  background: rgba(229,57,92,0.1); color: var(--ember);
   margin-bottom: 18px;
 }
-.card--foster .card-icon { background: rgba(91,127,90,0.12); color: var(--foster); }
+.card--foster .card-icon { background: rgba(30,156,79,0.12); color: var(--foster); }
+.card--intl .card-icon { background: rgba(51,64,158,0.12); color: var(--ink-2); }
 .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
 .card p { color: var(--ink); font-size: 0.96rem; margin: 0 0 0.85em; }
 .card p:last-child { margin-bottom: 0; }
@@ -278,7 +287,7 @@ img { max-width: 100%; display: block; }
 .photo-frame {
   aspect-ratio: 4/5; border-radius: var(--radius);
   background:
-    repeating-linear-gradient(135deg, rgba(18,51,46,0.06) 0 12px, transparent 12px 24px),
+    repeating-linear-gradient(135deg, rgba(20,24,92,0.06) 0 12px, transparent 12px 24px),
     linear-gradient(160deg, #EFE4D3, #E3D3BC);
   border: 1px dashed var(--line);
   display: flex; align-items: center; justify-content: center;
@@ -341,7 +350,7 @@ img { max-width: 100%; display: block; }
 .play-badge {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
   width: 52px; height: 52px; border-radius: 50%;
-  background: rgba(232,93,138,0.92); color: #fff;
+  background: rgba(229,57,92,0.92); color: #fff;
   display: flex; align-items: center; justify-content: center;
 }
 .video-item figcaption { font-size: 0.85rem; color: var(--ink-2); margin-top: 8px; }
@@ -399,7 +408,7 @@ img { max-width: 100%; display: block; }
 .site-footer { background: var(--ink); color: rgba(255,255,255,0.75); padding-block: 32px; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .footer-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-family: var(--font-display); font-weight: 600; }
-.footer-brand .brand-mark { color: var(--dawn); }
+.footer-brand .brand-logo { height: 40px; }
 .footer-nav { display: flex; gap: 18px; flex-wrap: wrap; }
 .footer-nav a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.92rem; }
 .footer-nav a:hover { color: #fff; }
@@ -408,17 +417,18 @@ img { max-width: 100%; display: block; }
 /* ---------- Bengali mode ----------
    Fraunces/IBM Plex Mono have no Bengali glyphs, so headings and the mono
    "eyebrow"/label treatment fall back to Bengali-supporting faces when the
-   page language is switched. */
+   page language is switched. Tiro Bangla is a serif in the same spirit as
+   Fraunces, so the two languages still read as one designed identity. */
 :root[lang="bn"] body { font-family: var(--font-bn); }
 :root[lang="bn"] h1,
 :root[lang="bn"] h2,
 :root[lang="bn"] h3,
 :root[lang="bn"] .brand-text {
-  font-family: 'Baloo Da 2', var(--font-bn);
+  font-family: var(--font-bn-display);
 }
 :root[lang="bn"] em { font-style: normal; }
 :root[lang="bn"] .hero-title {
-  font-family: 'Baloo 2', var(--font-display); /* wordmark stays English — don't fall back to the Bengali face */
+  font-family: var(--font-display); /* wordmark stays English — don't fall back to the Bengali face */
 }
 :root[lang="bn"] .eyebrow,
 :root[lang="bn"] .contact-list dt {

@@ -267,7 +267,8 @@ img { max-width: 100%; display: block; }
 }
 .card--foster .card-icon { background: rgba(91,127,90,0.12); color: var(--foster); }
 .card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-.card p { color: var(--ink); font-size: 0.96rem; margin: 0; }
+.card p { color: var(--ink); font-size: 0.96rem; margin: 0 0 0.85em; }
+.card p:last-child { margin-bottom: 0; }
 
 /* ---------- About ---------- */
 .about-grid {

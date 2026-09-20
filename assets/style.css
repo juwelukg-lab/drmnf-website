@@ -486,6 +486,7 @@ img { max-width: 100%; display: block; }
 .exec-name { font-size: 1.1rem; color: var(--ink-2); margin: 0 0 4px; }
 .exec-card--featured .exec-name { font-size: 1.5rem; white-space: nowrap; }
 .exec-title { font-weight: 700; color: var(--ink); font-size: 0.92rem; margin: 0 0 14px; }
+.exec-name + .exec-affiliations { margin-top: 14px; }
 .exec-card--featured .exec-title { white-space: nowrap; }
 .exec-affiliations {
   background: var(--paper-2); border: 1px solid var(--line); border-radius: 10px;
